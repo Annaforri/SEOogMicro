@@ -1,22 +1,34 @@
-/* ======================
-   Base / tokens / reset
-   ====================== */
-* { box-sizing: border-box; }
-:root {
-  --bg: #f7f8fa;
-  --text: #1f2937;
-  --muted: #6b7280;
-  --brand: #8cc98e;
-  --brand-600: #467a5c;
-  --accent: #098d00;
-  --card: #ffffff;
-  --border: #e7ebe5;
-  --radius: 16px;
-  --gap: 1rem;
-  --shadow: 0 10px 20px rgba(0,0,0,.06), 0 2px 6px rgba(0,0,0,.04);
+/* ======================================================
+   GRUNNOPPSETT: RESET, VARIABLER OG TYPOGRAFI
+   ====================================================== */
+
+/* Gjør at padding og border ikke øker elementets totale bredde/høyde */
+* { 
+  box-sizing: border-box; 
 }
 
-html, body { height: 100%; }
+/* Variabler for farger, avstand og radius – lett å endre hele temaet */
+:root {
+  --bg: #f7f8fa;           /* Lys bakgrunnsfarge */
+  --text: #1f2937;         /* Primær tekstfarge */
+  --muted: #6b7280;        /* Sekundær tekstfarge */
+
+  /* Merkevare-farger */
+  --brand: #8cc98e;        /* Lys grønn brukt i header og elementer */
+  --brand-600: #467a5c;    /* Mørkere grønn brukt til hover/fokus */
+  --brand-700: #2f4f3f;    /* Dyp grønn til aktiv tilstand */
+  --on-brand: #ffffff;     /* Hvit tekst på grønn bakgrunn */
+
+  /* Aksent og komponentstiler */
+  --accent: #098d00;       /* Grønn aksent for lenker/knapper */
+  --card: #ffffff;         /* Bakgrunn for artikler og kort */
+  --border: #e7ebe5;       /* Myk grå kantfarge */
+  --radius: 16px;          /* Avrunding for kort og knapper */
+  --gap: 1rem;             /* Standard mellomrom i grid */
+  --shadow: 0 10px 20px rgba(0,0,0,.06), 0 2px 6px rgba(0,0,0,.04); /* Myk skygge */
+}
+
+/* Generell typografi og bakgrunn */
 body {
   margin: 0;
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, Helvetica, sans-serif;
@@ -25,19 +37,44 @@ body {
   line-height: 1.55;
 }
 
-a { color: var(--accent); text-decoration: none; }
-a:hover { text-decoration: underline; }
-img { max-width: 100%; height: auto; display: block; }
-
-.sr-only {
-  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
-  overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+/* Lenker med grønn aksent og underline ved hover */
+a { 
+  color: var(--accent); 
+  text-decoration: none; 
 }
-:focus-visible { outline: 3px solid #94c1ff; outline-offset: 2px; border-radius: 6px; }
+a:hover { 
+  text-decoration: underline; 
+}
 
-/* ==========
-   Layout
-   ========== */
+/* Bilder skal aldri bli større enn foreldreelementet */
+img { 
+  max-width: 100%; 
+  height: auto; 
+  display: block; 
+}
+
+/* Skjuler elementer visuelt, men bevarer dem for skjermlesere */
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Gir tydelig blå ramme når man navigerer med tastatur */
+:focus-visible {
+  outline: 3px solid #94c1ff;
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+/* ======================================================
+   GRID-LAYOUT FOR HELE SIDEN
+   ====================================================== */
+
 .layout {
   display: grid;
   grid-template-columns: 1fr;
@@ -50,25 +87,30 @@ img { max-width: 100%; height: auto; display: block; }
     "footer";
 }
 
+/* ======================================================
+   HEADER – TITTEL OG INNLEDNING
+   ====================================================== */
+
 .site-header {
   grid-area: header;
-  background: linear-gradient(180deg, var(--brand), var(--brand-600));
-  color: #fff;
+  background: linear-gradient(180deg, var(--brand), var(--brand-600)); /* grønn gradient */
+  color: var(--on-brand);
   padding: 2.5rem 1.25rem;
 }
-.site-header h1 { margin: 0 0 .5rem; font-size: clamp(1.6rem, 2.4vw, 2.2rem); }
-.site-header .lede { max-width: 70ch; margin: 0; color: #eef5ff; }
-
-.site-nav,
-.content,
-.sidebar,
-.site-footer {
-  margin: 0 1rem;
+.site-header h1 {
+  margin: 0 0 .5rem;
+  font-size: clamp(1.6rem, 2.4vw, 2.2rem);
+}
+.site-header .lede {
+  max-width: 70ch;
+  margin: 0;
+  color: #eef5ff; /* Lys tekst for kontrast */
 }
 
-/* ==========
-   Navigasjon
-   ========== */
+/* ======================================================
+   NAVIGASJON – LOGO, MENY OG DROPDOWN
+   ====================================================== */
+
 .site-nav {
   grid-area: nav;
   display: flex;
@@ -80,7 +122,7 @@ img { max-width: 100%; height: auto; display: block; }
   background: transparent;
 }
 
-/* Logo/brand */
+/* Logoen – venstrejustert */
 .brand a {
   display: inline-flex;
   align-items: center;
@@ -89,7 +131,7 @@ img { max-width: 100%; height: auto; display: block; }
   color: var(--text);
 }
 
-/* Meny-knapp (mobil) */
+/* Menyknapp for mobil */
 .menu-toggle {
   margin-left: auto;
   display: inline-flex;
@@ -102,10 +144,14 @@ img { max-width: 100%; height: auto; display: block; }
   box-shadow: var(--shadow);
   cursor: pointer;
   font: inherit;
+  color: var(--text);
 }
-.menu-toggle:hover { background: #f9fafb; }
+.menu-toggle:hover,
+.menu-toggle:focus-visible {
+  background: #f3f4f6; /* Lys grå bakgrunn ved hover */
+}
 
-/* Primærmeny */
+/* Hovedmeny (mobilvisning) */
 .menu {
   list-style: none;
   padding: 0;
@@ -118,50 +164,80 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .menu[hidden] { display: none; }
 
-.menu > li { border-bottom: 1px solid var(--border); }
+/* Menyelementer separert med kantlinje */
+.menu > li {
+  border-bottom: 1px solid var(--border);
+}
 .menu > li:last-child { border-bottom: 0; }
+
+/* Menylenker – får grønn bakgrunn og hvit tekst ved hover */
 .menu a {
   display: block;
   padding: .9rem 1rem;
   color: var(--text);
+  transition: background 0.2s, color 0.2s;
 }
-.menu a:hover { background: #006e14; }
+.menu a:hover,
+.menu a:focus-visible {
+  background: var(--brand-600);
+  color: var(--on-brand);
+}
 
-/* Dropdown */
+/* DROPDOWN – undermeny */
 .dropdown { position: relative; }
+
+/* Knapp som åpner undermenyen */
 .dropdown__toggle {
   width: 100%;
   text-align: left;
   display: block;
   padding: .9rem 1rem;
-  background: #026700;
+  background: var(--brand);
   border: 0;
   cursor: pointer;
   font: inherit;
-  color: var(--text);
+  color: var(--on-brand);
+  transition: background 0.2s;
 }
-.dropdown__toggle:hover { background: #004b02; }
+.dropdown__toggle:hover,
+.dropdown__toggle:focus-visible {
+  background: var(--brand-700); /* Mørkere grønn for hover */
+}
 
+/* Undermeny – vises under hovedpunktet */
 .dropdown__menu {
   list-style: none;
   padding: .25rem;
   margin: 0;
   background: #fff;
   border-top: 1px dashed var(--border);
+  border-radius: 0 0 var(--radius) var(--radius);
 }
 .dropdown__menu[hidden] { display: none; }
-.dropdown__menu li a { padding: .7rem .75rem; border-radius: 8px; display: block; }
-.dropdown__menu li a:hover { background: #026900; }
 
-/* =====
-   Main
-   ===== */
+.dropdown__menu li a {
+  padding: .7rem .75rem;
+  border-radius: 8px;
+  display: block;
+  color: var(--text);
+}
+.dropdown__menu li a:hover,
+.dropdown__menu li a:focus-visible {
+  background: var(--brand-600);
+  color: var(--on-brand);
+}
+
+/* ======================================================
+   HOVEDINNHOLD – ARTIKLER OG BILDER
+   ====================================================== */
+
 .content {
   grid-area: main;
   display: grid;
   gap: var(--gap);
 }
 
+/* Artikler vises som kort med skygge og avrunding */
 article {
   background: var(--card);
   border: 1px solid var(--border);
@@ -178,14 +254,10 @@ article ul { margin: .25rem 1rem 1rem; }
 article p:last-of-type { margin-bottom: 1rem; }
 article .cta { padding-bottom: 1rem; }
 
-/* (Valgfritt) manuell rekkefølge hvis ønsket */
-/* .content > #item-1 { order: 2; }
-   .content > #item-2 { order: 0; }
-   .content > #item-3 { order: 1; } */
+/* ======================================================
+   SIDEKOLONNE (ASIDE)
+   ====================================================== */
 
-/* ======
-   Aside
-   ====== */
 .sidebar {
   grid-area: aside;
   background: var(--card);
@@ -203,6 +275,7 @@ article .cta { padding-bottom: 1rem; }
 }
 .sidebar .links li { padding: .4rem 0; }
 
+/* Knapp med grønn bakgrunn og hvit tekst */
 .btn {
   display: inline-block;
   padding: .7rem 1rem;
@@ -210,11 +283,17 @@ article .cta { padding-bottom: 1rem; }
   color: #fff;
   border-radius: 10px;
   box-shadow: var(--shadow);
+  transition: background 0.2s;
+}
+.btn:hover,
+.btn:focus-visible {
+  background: var(--brand-700);
 }
 
-/* =======
-   Footer
-   ======= */
+/* ======================================================
+   FOOTER
+   ====================================================== */
+
 .site-footer {
   grid-area: footer;
   background: #343434;
@@ -223,14 +302,19 @@ article .cta { padding-bottom: 1rem; }
   text-align: center;
 }
 
-/* =======================
-   Responsiv oppskalering
-   ======================= */
-@media (min-width: 640px){
-  .content { grid-template-columns: repeat(2, minmax(0,1fr)); }
+/* ======================================================
+   RESPONSIVE LAYOUTER
+   ====================================================== */
+
+/* Mellomstore skjermer: To kolonner i hovedinnholdet */
+@media (min-width: 640px) {
+  .content { 
+    grid-template-columns: repeat(2, minmax(0,1fr)); 
+  }
 }
 
-@media (min-width: 900px){
+/* Store skjermer: sidekolonne ved siden av main */
+@media (min-width: 900px) {
   .layout {
     grid-template-columns: 1fr 320px;
     grid-template-areas:
@@ -241,8 +325,10 @@ article .cta { padding-bottom: 1rem; }
     gap: 1.25rem;
   }
 
-  /* Desktop: horisontal meny, alltid synlig */
+  /* Skjul mobilknappen når menyen vises horisontalt */
   .menu-toggle { display: none; }
+
+  /* Horisontal meny på desktop */
   .menu {
     width: auto;
     display: flex;
@@ -253,21 +339,33 @@ article .cta { padding-bottom: 1rem; }
     background: transparent;
     margin-left: auto;
   }
-  .menu[hidden] { display: flex !important; } /* vis selv om hidden finnes */
+
+  /* Sørger for at menyen vises selv om hidden-attributtet er aktivt */
+  .menu[hidden] { display: flex !important; }
+
+  /* Fjerner kantlinjer mellom menyvalg */
   .menu > li { border: 0; }
 
+  /* Menylenker – litt mer luft og avrunding */
   .menu a,
   .dropdown__toggle {
     padding: .5rem .75rem;
     border-radius: 10px;
   }
+
+  /* Hover på desktop – grønn bakgrunn og hvit tekst */
   .menu a:hover,
-  .dropdown__toggle:hover {
-    background: #eef2f7;
+  .menu a:focus-visible,
+  .dropdown__toggle:hover,
+  .dropdown__toggle:focus-visible {
+    background: var(--brand-600);
+    color: var(--on-brand);
   }
 
-  /* Flytende dropdown */
-  .dropdown { position: relative; }
+  /* Dropdown vises flytende under hovedmeny */
+  .dropdown {
+    position: relative;
+  }
   .dropdown__menu {
     position: absolute;
     top: calc(100% + .4rem);
@@ -280,4 +378,3 @@ article .cta { padding-bottom: 1rem; }
     padding: .25rem;
   }
 }
-
