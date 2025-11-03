@@ -13,41 +13,70 @@
 <body>
   <div class="layout">
     <!-- HEADER -->
-    <header class="site-header" itemscope itemtype="https://schema.org/Article">
-      <h1 itemprop="headline">Søkemotoroptimalisering (SEO)</h1>
-      <p class="lede" itemprop="description">
+    <header class="site-header">
+      <h1>Søkemotoroptimalisering (SEO)</h1>
+      <p class="lede">
         Praktisk innføring i hvordan du gjør nettsiden din synlig i Google: teknisk SEO, innholdsstruktur, titler og metabeskrivelser,
         bilder, internlenker og strukturert data.
       </p>
     </header>
     <!-- NAVIGASJON -->
-    <nav class="site-nav" aria-label="Hovedmeny">
-      <div class="brand">
-        <a href="/" aria-label="Hjem">Logo</a>
-      </div>
+<nav class="site-nav"
+     aria-label="Hovedmeny"
+     itemscope
+     itemtype="https://schema.org/SiteNavigationElement">
 
-      <button class="btn menu-toggle js-menu-toggle" aria-expanded="false" aria-controls="primary-menu">
-        <span class="fas fa-hamburger" aria-hidden="true"></span>
-        Meny
+  <!-- Logo / hjem-lenke -->
+  <div class="brand" itemprop="name">
+    <a href="/" aria-label="Hjem" itemprop="url">Logo</a>
+  </div>
+
+  <!-- Hamburger-knapp for mobil -->
+  <button class="btn menu-toggle js-menu-toggle"
+          aria-expanded="false"
+          aria-controls="primary-menu">
+    <span class="fas fa-hamburger" aria-hidden="true"></span>
+    <span class="sr-only">Åpne meny</span>
+  </button>
+
+  <!-- Hovedmeny -->
+  <ul id="primary-menu"
+      class="menu menu--primary js-primary-menu"
+      hidden>
+
+    <!-- Hovedlenker -->
+    <li itemprop="name">
+      <a href="#item-1" itemprop="url">Teknisk SEO</a>
+    </li>
+    <li itemprop="name">
+      <a href="#item-2" itemprop="url">Titler og meta</a>
+    </li>
+    <li itemprop="name">
+      <a href="#item-3" itemprop="url">Bilder og alt-tekst</a>
+    </li>
+
+    <!-- Dropdown (Oblig 1) -->
+    <li class="dropdown" itemprop="name">
+      <button class="dropdown__toggle"
+              aria-expanded="false"
+              aria-controls="dropdown-1">
+        <span itemprop="name">Oblig 1</span>
       </button>
 
-      <ul id="primary-menu" class="menu menu--primary js-primary-menu" hidden>
-        <li><a href="#item-1">Teknisk SEO</a></li>
-        <li><a href="#item-2">Titler og meta</a></li>
-        <li><a href="#item-3">Bilder og alt-tekst</a></li>
-
-        <li class="dropdown">
-          <button class="dropdown__toggle" aria-expanded="false" aria-controls="dropdown-1">
-            Oblig 1
-          </button>
-          <ul id="dropdown-1" class="dropdown__menu" hidden>
-            <li><a href="#skjema">HTML-skjema</a></li>
-            <li><a href="#media">Media-typer</a></li>
-            <li><a href="#layout">CSS-layout</a></li>
-          </ul>
+      <ul id="dropdown-1" class="dropdown__menu" hidden>
+        <li itemprop="name">
+          <a href="#skjema" itemprop="url">HTML-skjema</a>
+        </li>
+        <li itemprop="name">
+          <a href="#media" itemprop="url">Media-typer</a>
+        </li>
+        <li itemprop="name">
+          <a href="#layout" itemprop="url">CSS-layout</a>
         </li>
       </ul>
-    </nav>
+    </li>
+  </ul>
+</nav>
 
     <!-- INNHOLD -->
  <main class="content" id="main"itemscope itemtype="https://schema.org/Article">
