@@ -42,10 +42,12 @@ body {
 /* Lenker med grønn aksent og underline ved hover */
 a { 
   color: var(--accent); 
-  text-decoration: none; 
+  text-decoration: none;
+  font-weight: 500; 
 }
 a:hover { 
   text-decoration: underline; 
+  font-weight: 700;
 }
 
 /* Bilder skal aldri bli større enn foreldreelementet */
@@ -179,6 +181,7 @@ img {
   padding: .9rem 1rem;
   color: var(--text);
   transition: background 0.2s, color 0.2s;
+  text-decoration: none;
 }
 .menu a:hover,
 .menu a:focus-visible {
@@ -195,11 +198,11 @@ img {
   text-align: left;
   display: block;
   padding: .9rem 1rem;
-  background: var(--brand);
+  background: #fff;;
   border: 0;
   cursor: pointer;
   font: inherit;
-  color: #ffff;
+  color: #000000;
   transition: background 0.2s;
 }
 .dropdown__toggle:hover,
@@ -252,11 +255,11 @@ article {
 article header { padding: 1rem 1rem .5rem; }
 article h2 { margin: 0; font-size: 1.15rem; }
 article figure { margin: 0; }
-article figcaption { padding: .5rem 1rem; color: var(--muted); font-size: .9rem; }
+article figcaption { padding: .5rem 1rem; color: #000000; font-size: 1rem; }
 article p, article ul, article .cta { padding: 0 1rem 0; }
 article ul { margin: .25rem 1rem 1rem; }
 article p:last-of-type { margin-bottom: 1rem; }
-article .cta { padding-bottom: 1rem; }
+article .cta { padding-bottom: 1rem; text-decoration: underline; }
 
 /* ======================================================
    SIDEKOLONNE (ASIDE)
@@ -277,6 +280,7 @@ article .cta { padding-bottom: 1rem; }
   list-style: none;
   margin: .5rem 0 0;
   padding: 0;
+  text-decoration: underline;
 }
 .sidebar .links li { padding: .4rem 0; }
 

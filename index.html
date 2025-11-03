@@ -8,25 +8,14 @@
   <link href="font/css/all.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css" />
   <link rel="stylesheet" href="style-min.css" />
-
-  <!-- Valgfritt: Strukturert data for siden (enkelt WebPage-eksempel) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "Søkemotoroptimalisering (SEO) – Grunnleggende guide og beste praksis",
-    "inLanguage": "no",
-    "description": "Praktisk innføring i SEO: teknisk synlighet, metadata, bilder, internlenker og strukturert data."
-  }
-  </script>
 </head>
 
 <body>
   <div class="layout">
     <!-- HEADER -->
-    <header class="site-header">
-      <h1>Søkemotoroptimalisering (SEO)</h1>
-      <p class="lede">
+    <header class="site-header" itemscope itemtype="https://schema.org/Article">
+      <h1 itemprop="headline">Søkemotoroptimalisering (SEO)</h1>
+      <p class="lede" itemprop="description">
         Praktisk innføring i hvordan du gjør nettsiden din synlig i Google: teknisk SEO, innholdsstruktur, titler og metabeskrivelser,
         bilder, internlenker og strukturert data.
       </p>
@@ -61,84 +50,158 @@
     </nav>
 
     <!-- INNHOLD -->
-    <main class="content" id="main">
-      <article id="item-1">
-        <header><h2>Teknisk SEO: gjør siden din synlig og rask</h2></header>
-        <figure>
-          <img src="https://picsum.photos/400/400" alt="Illustrasjon av nettleser og søk" loading="lazy" width="400" height="400" />
-          <figcaption>Teknisk synlighet, hastighet og gjennomsøking.</figcaption>
-        </figure>
-        <p>
-          Teknisk SEO handler om å hjelpe søkemotorer å finne, lese og indeksere innholdet ditt. Sjekk at du bruker HTTPS, har ryddige URL-er
-          og at viktige ressurser (CSS/JS/bilder) ikke blokkeres. En XML-sitemap og en korrekt <code>robots.txt</code> gjør jobben enklere for Google.
-          Optimaliser lastetid for bedre brukeropplevelse og rangering.
-        </p>
-        <ul>
-          <li>Bruk <strong>Google Search Console</strong> til å overvåke indeksering og feil</li>
-          <li>Forbedre hastighet og stabilitet (Core Web Vitals)</li>
-          <li>Unngå duplikatinnhold med <code>rel="canonical"</code> og riktige omdirigeringer</li>
-        </ul>
-        <p class="cta"><a href="#rel-1">Les mer om teknisk SEO</a></p>
-      </article>
+ <main class="content" id="main"itemscope itemtype="https://schema.org/Article">
+    <meta itemprop="inLanguage" content="no">
+    <meta itemprop="author" content="Anna Førrisdahl">
+    <meta itemprop="datePublished" content="2025-11-03">
+    <meta itemprop="publisher" content="Webutvikling 2024">
+    <meta itemprop="headline" content="Søkemotoroptimalisering (SEO) – Grunnleggende guide og beste praksis">
 
-      <article id="item-2">
-        <header><h2>Titler og metabeskrivelser som gir klikk</h2></header>
-        <figure>
-          <img src="https://picsum.photos/400/400" alt="Eksempel på søkeresultat med tittel og beskrivelse" loading="lazy" width="400" height="400" />
-          <figcaption>Optimaliser tittel og metabeskrivelse for bedre CTR.</figcaption>
-        </figure>
-        <p>
-          <strong>Side-tittelen</strong> (HTML-<code>&lt;title&gt;</code>) og <strong>metabeskrivelsen</strong> avgjør om brukeren klikker på resultatet ditt.
-          Skriv unike, presise titler (ca. 50–60 tegn) og korte, selgende beskrivelser (ca. 140–155 tegn) som oppsummerer siden.
-          Bruk språk fra målgruppen – ikke nøkkelord-fylling.
-        </p>
-        <p>
-          Eksempel på god tittel: <em>“Medisinsk yoga i Fredrikstad – timer for stress og søvn”</em>.
-          Eksempel på god metabeskrivelse: <em>“Rolige gruppetimer med fokus på pust og balanse. Påmelding og priser – se ledige plasser.”</em>
-        </p>
-        <p class="cta"><a href="#rel-2">Se tips for tittel og meta</a></p>
-      </article>
+  <!-- ARTIKKEL 1 -->
+  <article id="item-1" itemprop="articleSection">
+    <header><h2 itemprop="headline">Teknisk SEO: gjør siden din synlig og rask</h2></header>
+    <figure itemscope itemtype="https://schema.org/ImageObject" itemprop="image">
+      <picture>
+        <source media="(min-width: 680px)" srcset="https://picsum.photos/id/1/1200/800">
+        <source media="(max-width: 679px)" srcset="https://picsum.photos/id/1/400/267">
+        <img src="https://picsum.photos/id/1/1200/800"
+             alt="Mann som arbeider foran PC"
+             width="1200" height="800"
+             loading="lazy" decoding="async" itemprop="url">
+      </picture>
+	  <meta itemprop="width" content="1200">
+  <meta itemprop="height" content="800">
+      <figcaption itemprop="caption">Teknisk synlighet, hastighet og gjennomsøking.</figcaption>
+    </figure>
 
-      <article id="item-3">
-        <header><h2>Bilder, alt-tekst og filnavn</h2></header>
-        <figure>
-          <img src="https://picsum.photos/400/400" alt="Illustrasjon av bildeoptimalisering" loading="lazy" width="400" height="400" />
-          <figcaption>Beskrivende filnavn, alt-tekst og plassering nær relevant tekst.</figcaption>
-        </figure>
-        <p>
-          Bilder kan gi trafikk fra bildesøk og forsterker forståelsen av innholdet. Bruk beskrivende filnavn (f.eks.
-          <code>medisinsk-yoga-instruktor.jpg</code>), legg inn <strong>alt-tekst</strong> som forklarer motiv og funksjon,
-          og plasser bilder nær relevant tekst. Komprimer bilder og bruk moderne formater der det passer.
-        </p>
-        <p class="cta"><a href="#rel-3">Lær mer om bilde-SEO</a></p>
-      </article>
+    <p itemprop="articleBody">
+      Teknisk SEO handler om å hjelpe søkemotorer å finne, lese og indeksere innholdet ditt.
+      Sjekk at du bruker HTTPS, har ryddige URL-er og at viktige ressurser (CSS/JS/bilder)
+      ikke blokkeres. En XML-sitemap og en korrekt <code>robots.txt</code> gjør jobben enklere
+      for Google. Optimaliser lastetid for bedre brukeropplevelse og rangering.
+    </p>
+    <ul>
+      <li>Bruk <strong>Google Search Console</strong> til å overvåke indeksering og feil</li>
+      <li>Forbedre hastighet og stabilitet (Core Web Vitals)</li>
+      <li>Unngå duplikatinnhold med <code>rel="canonical"</code> og riktige omdirigeringer</li>
+    </ul>
+    <p class="cta"><a href="#rel-1">Les mer om teknisk SEO</a></p>
+  </article>
 
-      <article id="item-4">
-        <header><h2>Internlenking og informasjonsarkitektur</h2></header>
-        <figure>
-          <img src="https://picsum.photos/400/400" alt="Diagram over internlenker mellom sider" loading="lazy" width="400" height="400" />
-          <figcaption>Struktur og beskrivende ankertekster hjelper både brukere og Google.</figcaption>
-        </figure>
-        <p>
-          En tydelig struktur hjelper både brukere og søkemotorer. Sett opp logiske kategorier og bruk interne lenker med beskrivende ankertekst
-          (f.eks. “se <strong>priser for medisinsk yoga</strong>” fremfor “klikk her”). Viktige sider bør være tilgjengelige på få klikk fra forsiden.
-        </p>
-        <p class="cta"><a href="#rel-4">Slik bygger du gode internlenker</a></p>
-      </article>
 
-      <article id="item-5">
-        <header><h2>Strukturert data (schema.org) og rike resultater</h2></header>
-        <figure>
-          <img src="https://picsum.photos/400/400" alt="Symboler for strukturert data og rike resultater" loading="lazy" width="400" height="400" />
-          <figcaption>JSON-LD kan gi kvalifisering for rich results i søk.</figcaption>
-        </figure>
-        <p>
-          Med <strong>JSON-LD</strong> kan du beskrive hva siden handler om (artikkel, arrangement, produkt) slik at Google kan vise rike resultater
-          som stjerner, priser og FAQ. Merk kun opp informasjon som faktisk finnes på siden, og test i Rich Results Test før publisering.
-        </p>
-        <p class="cta"><a href="#rel-5">Kom i gang med schema.org</a></p>
-      </article>
-    </main>
+  <!-- ARTIKKEL 2 -->
+  <article id="item-2"  itemprop="articleSection">
+    <header><h2 itemprop="headline">Titler og metabeskrivelser som gir klikk</h2></header>
+    <figure itemscope itemtype="https://schema.org/ImageObject" itemprop="image">
+      <picture>
+        <source media="(min-width: 680px)" srcset="https://picsum.photos/id/2/1200/750">
+        <source media="(max-width: 679px)" srcset="https://picsum.photos/id/2/400/250">
+        <img src="https://picsum.photos/id/2/1200/750"
+             alt="Eksempel på søkeresultat med tittel og beskrivelse"
+             width="1200" height="750"
+             loading="lazy" decoding="async" itemprop="url">
+      </picture>
+	  <meta itemprop="width" content="1200">
+  <meta itemprop="height" content="800">
+      <figcaption itemprop="caption">Optimaliser tittel og metabeskrivelse for bedre CTR.</figcaption>
+    </figure>
+
+    <p itemprop="articleBody">
+      <strong>Side-tittelen</strong> (HTML-<code>&lt;title&gt;</code>) og
+      <strong>metabeskrivelsen</strong> avgjør om brukeren klikker på resultatet ditt.
+      Skriv unike, presise titler (ca. 50–60 tegn) og korte, selgende beskrivelser
+      (ca. 140–155 tegn) som oppsummerer siden. Bruk språk fra målgruppen – ikke nøkkelord-fylling.
+    </p>
+    <p>
+      Eksempel på god tittel: <em>“Medisinsk yoga i Fredrikstad – timer for stress og søvn”</em>.
+      Eksempel på god metabeskrivelse: <em>“Rolige gruppetimer med fokus på pust og balanse.
+      Påmelding og priser – se ledige plasser.”</em>
+    </p>
+    <p class="cta"><a href="#rel-2">Se tips for tittel og meta</a></p>
+  </article>
+
+
+  <!-- ARTIKKEL 3 -->
+  <article id="item-3"  itemprop="articleSection">
+    <header><h2 itemprop="headline">Bilder, alt-tekst og filnavn</h2></header>
+    <figure itemscope itemtype="https://schema.org/ImageObject" itemprop="image">
+      <picture>
+        <source media="(min-width: 680px)" srcset="https://picsum.photos/id/3/1200/780">
+        <source media="(max-width: 679px)" srcset="https://picsum.photos/id/3/400/260">
+        <img src="https://picsum.photos/id/3/1200/780"
+             alt="Illustrasjon av bildeoptimalisering"
+             width="1200" height="780"
+             loading="lazy" decoding="async" itemprop="url">
+      </picture>
+	  <meta itemprop="width" content="1200">
+  <meta itemprop="height" content="800">
+      <figcaption itemprop="caption">Beskrivende filnavn, alt-tekst og plassering nær relevant tekst.</figcaption>
+    </figure>
+
+    <p itemprop="articleBody">
+      Bilder kan gi trafikk fra bildesøk og forsterker forståelsen av innholdet.
+      Bruk beskrivende filnavn (f.eks. <code>medisinsk-yoga-instruktor.jpg</code>),
+      legg inn <strong>alt-tekst</strong> som forklarer motiv og funksjon,
+      og plasser bilder nær relevant tekst. Komprimer bilder og bruk moderne formater der det passer.
+    </p>
+    <p class="cta"><a href="#rel-3">Lær mer om bilde-SEO</a></p>
+  </article>
+
+
+  <!-- ARTIKKEL 4 -->
+  <article id="item-4"  itemprop="articleSection">
+    <header><h2 itemprop="headline">Internlenking og informasjonsarkitektur</h2></header>
+    <figure itemscope itemtype="https://schema.org/ImageObject" itemprop="image">
+      <picture>
+        <source media="(min-width: 680px)" srcset="https://picsum.photos/id/4/1200/700">
+        <source media="(max-width: 679px)" srcset="https://picsum.photos/id/4/400/233">
+        <img src="https://picsum.photos/id/4/1200/700"
+             alt="Diagram over internlenker mellom sider"
+             width="1200" height="700"
+             loading="lazy" decoding="async"
+			 itemprop="url"> 
+      </picture>
+	  <meta itemprop="width" content="1200">
+  <meta itemprop="height" content="800">
+      <figcaption itemprop="caption">Struktur og beskrivende ankertekster hjelper både brukere og Google.</figcaption>
+    </figure>
+
+    <p itemprop="articleBody">
+      En tydelig struktur hjelper både brukere og søkemotorer. Sett opp logiske kategorier
+      og bruk interne lenker med beskrivende ankertekst (f.eks. “se <strong>priser for medisinsk yoga</strong>”
+      fremfor “klikk her”). Viktige sider bør være tilgjengelige på få klikk fra forsiden.
+    </p>
+    <p class="cta"><a href="#rel-4">Slik bygger du gode internlenker</a></p>
+  </article>
+
+
+  <!-- ARTIKKEL 5 -->
+  <article id="item-5"  itemprop="articleSection">
+    <header><h2 itemprop="headline">Strukturert data (schema.org) og rike resultater</h2></header>
+    <figure itemscope itemtype="https://schema.org/ImageObject" itemprop="image">
+      <picture>
+        <source media="(min-width: 680px)" srcset="https://picsum.photos/id/5/1200/820">
+        <source media="(max-width: 679px)" srcset="https://picsum.photos/id/5/400/273">
+        <img src="https://picsum.photos/id/5/1200/820"
+             alt="Symboler for strukturert data og rike resultater"
+             width="1200" height="820"
+             loading="lazy" decoding="async">
+      </picture>
+	  <meta itemprop="width" content="1200">
+  <meta itemprop="height" content="800">
+      <figcaption itemprop="caption">JSON-LD kan gi kvalifisering for rich results i søk.</figcaption>
+    </figure>
+
+    <p itemprop="articleBody">
+      Med <strong>JSON-LD</strong> kan du beskrive hva siden handler om
+      (artikkel, arrangement, produkt) slik at Google kan vise rike resultater
+      som stjerner, priser og FAQ. Merk kun opp informasjon som faktisk finnes
+      på siden, og test i Rich Results Test før publisering.
+    </p>
+    <p class="cta"><a href="#rel-5">Kom i gang med schema.org</a></p>
+  </article>
+
+</main>
 
     <!-- SIDEKOLONNE -->
     <aside class="sidebar" aria-label="Sideinnhold">
