@@ -1,120 +1,213 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<link href="font/css/all.css" rel="stylesheet">
-		<link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
-		<link rel="stylesheet" href="style.css">
-	</head>
-	<body>
-		<script>
-		function mobilMenu(){
-			var x = document.getElementById("ham");
+<!doctype html>
+<html lang="no">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Søkemotoroptimalisering (SEO) – Grunnleggende guide og beste praksis</title>
+  <meta name="description" content="Lær det viktigste om SEO: teknisk synlighet, gode titler og metabeskrivelser, internlenking, bilder med alt-tekst og strukturert data (schema.org)." />
+  <link href="font/css/all.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css" />
+  <link rel="stylesheet" href="style.css" />
 
-			if(x.style.display === "block"){
-				x.style.display = "none";
-			}
-			
-			else {
-				x.style.display= "block";
-			}
-		}
-		</script>
-	<div id="grid-container">
-		<header id="page-header">
-			<h1>Søkemotoroptimalisering</h1>
-		</header>
-		<nav>
-			<h1>Logo</h1>
-			<i class="fas fa-hamburger" onclick="mobilMenu()"></i>
-			<ul id="ham" class="top-menu">
-				<li><a>Link</a></li>
-				<li><a>Link</a></li>
-				<li><a>Link</a></li>
-				<!-- Her starter dropdown -->
-				<li class="dropdown-point"> 
-					<a>Oblig 1</a>
-					<ul class="dropdown-main">
-						<li><a>HTML-skjema</a></li>
-						<li><a>Media typer</a></li>
-						<li><a>CSS Layout</a></li>
-					</ul>
-				</li>
-				<!-- Her slutter dropdown -->
-	
-			</ul>
-		</nav>
-		<div id="main">
-			<article id="item-1">
-				<header>
-					<h1>Overskrift 1</h1>
-				</header>
-				<img src="https://picsum.photos/400/400">
-				<p>
-					If you break the rules, try to leave or lose the game, you will die. Just like Saaaaw. Oh, wow. That's an intense line of questioning, Snuffles I'll tell you how I feel about school, Jerry. It's a waste of time.
-				</p>
-				<a>Les mer</a>
-			</article>
-			<article id="item-2">
-				<header>
-					<h1>Overskrift 2</h1>
-				</header>
-				<img src="https://picsum.photos/400/400">
-				<p>
-					If you break the rules, try to leave or lose the game, you will die. Just like Saaaaw. Oh, wow. That's an intense line of questioning, Snuffles I'll tell you how I feel about school, Jerry. It's a waste of time.
-				</p>
-				<a>Les mer</a>
-			</article>
-			<article id="item-3">
-				<header>
-					<h1>Overskrift 3</h1>
-				</header>
-				<img src="https://picsum.photos/400/400">
-				<p>
-					If you break the rules, try to leave or lose the game, you will die. Just like Saaaaw. Oh, wow. That's an intense line of questioning, Snuffles I'll tell you how I feel about school, Jerry. It's a waste of time.
-				</p>
-				<a>Les mer</a>
-			</article>
-			<article>
-				<header>
-					<h1>Overskrift 1</h1>
-				</header>
-				<img src="https://picsum.photos/400/400">
-				<p>
-					If you break the rules, try to leave or lose the game, you will die. Just like Saaaaw. Oh, wow. That's an intense line of questioning, Snuffles I'll tell you how I feel about school, Jerry. It's a waste of time.
-				</p>
-				<a>Les mer</a>
-			</article>
-			<article>
-				<header>
-					<h1>Overskrift 2</h1>
-				</header>
-				<img src="https://picsum.photos/400/400">
-				<p>
-					If you break the rules, try to leave or lose the game, you will die. Just like Saaaaw. Oh, wow. That's an intense line of questioning, Snuffles I'll tell you how I feel about school, Jerry. It's a waste of time.
-				</p>
-				<a>Les mer</a>
-			</article>
-		</div>
-		<div id="aside">
-			<h1>Side innhold</h1>
-			<section id="video">
-			</section>
-			<section id="rel-article">
-				<ul>
-					<li><a>Link</a></li>
-					<li><a>Link</a></li>
-					<li><a>Link</a></li>
-					<li><a>Link</a></li>
-					<li><a>Link</a></li>
-				</ul>
-			</section>			
-			<section id="google-btn">
-				<a class="btn">Google</a>
-			</section>
-		</div>
-		<footer>
-			Webutvikling 2024
-		</footer>
-	</div>
-	</body>
+  <!-- Valgfritt: Strukturert data for siden (enkelt WebPage-eksempel) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Søkemotoroptimalisering (SEO) – Grunnleggende guide og beste praksis",
+    "inLanguage": "no",
+    "description": "Praktisk innføring i SEO: teknisk synlighet, metadata, bilder, internlenker og strukturert data."
+  }
+  </script>
+</head>
+
+<body>
+  <div class="layout">
+    <!-- HEADER -->
+    <header class="site-header">
+      <h1>Søkemotoroptimalisering (SEO)</h1>
+      <p class="lede">
+        Praktisk innføring i hvordan du gjør nettsiden din synlig i Google: teknisk SEO, innholdsstruktur, titler og metabeskrivelser,
+        bilder, internlenker og strukturert data.
+      </p>
+    </header>
+
+    <!-- NAVIGASJON -->
+    <nav class="site-nav" aria-label="Hovedmeny">
+      <div class="brand">
+        <a href="/" aria-label="Hjem">Logo</a>
+      </div>
+
+      <button class="btn menu-toggle js-menu-toggle" aria-expanded="false" aria-controls="primary-menu">
+        <span class="fas fa-hamburger" aria-hidden="true"></span>
+        Meny
+      </button>
+
+      <ul id="primary-menu" class="menu menu--primary js-primary-menu" hidden>
+        <li><a href="#item-1">Teknisk SEO</a></li>
+        <li><a href="#item-2">Titler og meta</a></li>
+        <li><a href="#item-3">Bilder og alt-tekst</a></li>
+
+        <li class="dropdown">
+          <button class="dropdown__toggle" aria-expanded="false" aria-controls="dropdown-1">
+            Oblig 1
+          </button>
+          <ul id="dropdown-1" class="dropdown__menu" hidden>
+            <li><a href="#skjema">HTML-skjema</a></li>
+            <li><a href="#media">Media-typer</a></li>
+            <li><a href="#layout">CSS-layout</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- INNHOLD -->
+    <main class="content" id="main">
+      <article id="item-1">
+        <header><h2>Teknisk SEO: gjør siden din synlig og rask</h2></header>
+        <figure>
+          <img src="https://picsum.photos/400/400" alt="Illustrasjon av nettleser og søk" loading="lazy" width="400" height="400" />
+          <figcaption>Teknisk synlighet, hastighet og gjennomsøking.</figcaption>
+        </figure>
+        <p>
+          Teknisk SEO handler om å hjelpe søkemotorer å finne, lese og indeksere innholdet ditt. Sjekk at du bruker HTTPS, har ryddige URL-er
+          og at viktige ressurser (CSS/JS/bilder) ikke blokkeres. En XML-sitemap og en korrekt <code>robots.txt</code> gjør jobben enklere for Google.
+          Optimaliser lastetid for bedre brukeropplevelse og rangering.
+        </p>
+        <ul>
+          <li>Bruk <strong>Google Search Console</strong> til å overvåke indeksering og feil</li>
+          <li>Forbedre hastighet og stabilitet (Core Web Vitals)</li>
+          <li>Unngå duplikatinnhold med <code>rel="canonical"</code> og riktige omdirigeringer</li>
+        </ul>
+        <p class="cta"><a href="#rel-1">Les mer om teknisk SEO</a></p>
+      </article>
+
+      <article id="item-2">
+        <header><h2>Titler og metabeskrivelser som gir klikk</h2></header>
+        <figure>
+          <img src="https://picsum.photos/400/400" alt="Eksempel på søkeresultat med tittel og beskrivelse" loading="lazy" width="400" height="400" />
+          <figcaption>Optimaliser tittel og metabeskrivelse for bedre CTR.</figcaption>
+        </figure>
+        <p>
+          <strong>Side-tittelen</strong> (HTML-<code>&lt;title&gt;</code>) og <strong>metabeskrivelsen</strong> avgjør om brukeren klikker på resultatet ditt.
+          Skriv unike, presise titler (ca. 50–60 tegn) og korte, selgende beskrivelser (ca. 140–155 tegn) som oppsummerer siden.
+          Bruk språk fra målgruppen – ikke nøkkelord-fylling.
+        </p>
+        <p>
+          Eksempel på god tittel: <em>“Medisinsk yoga i Fredrikstad – timer for stress og søvn”</em>.
+          Eksempel på god metabeskrivelse: <em>“Rolige gruppetimer med fokus på pust og balanse. Påmelding og priser – se ledige plasser.”</em>
+        </p>
+        <p class="cta"><a href="#rel-2">Se tips for tittel og meta</a></p>
+      </article>
+
+      <article id="item-3">
+        <header><h2>Bilder, alt-tekst og filnavn</h2></header>
+        <figure>
+          <img src="https://picsum.photos/400/400" alt="Illustrasjon av bildeoptimalisering" loading="lazy" width="400" height="400" />
+          <figcaption>Beskrivende filnavn, alt-tekst og plassering nær relevant tekst.</figcaption>
+        </figure>
+        <p>
+          Bilder kan gi trafikk fra bildesøk og forsterker forståelsen av innholdet. Bruk beskrivende filnavn (f.eks.
+          <code>medisinsk-yoga-instruktor.jpg</code>), legg inn <strong>alt-tekst</strong> som forklarer motiv og funksjon,
+          og plasser bilder nær relevant tekst. Komprimer bilder og bruk moderne formater der det passer.
+        </p>
+        <p class="cta"><a href="#rel-3">Lær mer om bilde-SEO</a></p>
+      </article>
+
+      <article id="item-4">
+        <header><h2>Internlenking og informasjonsarkitektur</h2></header>
+        <figure>
+          <img src="https://picsum.photos/400/400" alt="Diagram over internlenker mellom sider" loading="lazy" width="400" height="400" />
+          <figcaption>Struktur og beskrivende ankertekster hjelper både brukere og Google.</figcaption>
+        </figure>
+        <p>
+          En tydelig struktur hjelper både brukere og søkemotorer. Sett opp logiske kategorier og bruk interne lenker med beskrivende ankertekst
+          (f.eks. “se <strong>priser for medisinsk yoga</strong>” fremfor “klikk her”). Viktige sider bør være tilgjengelige på få klikk fra forsiden.
+        </p>
+        <p class="cta"><a href="#rel-4">Slik bygger du gode internlenker</a></p>
+      </article>
+
+      <article id="item-5">
+        <header><h2>Strukturert data (schema.org) og rike resultater</h2></header>
+        <figure>
+          <img src="https://picsum.photos/400/400" alt="Symboler for strukturert data og rike resultater" loading="lazy" width="400" height="400" />
+          <figcaption>JSON-LD kan gi kvalifisering for rich results i søk.</figcaption>
+        </figure>
+        <p>
+          Med <strong>JSON-LD</strong> kan du beskrive hva siden handler om (artikkel, arrangement, produkt) slik at Google kan vise rike resultater
+          som stjerner, priser og FAQ. Merk kun opp informasjon som faktisk finnes på siden, og test i Rich Results Test før publisering.
+        </p>
+        <p class="cta"><a href="#rel-5">Kom i gang med schema.org</a></p>
+      </article>
+    </main>
+
+    <!-- SIDEKOLONNE -->
+    <aside class="sidebar" aria-label="Sideinnhold">
+      <section id="rel-article" aria-labelledby="rel-article-title">
+        <h2 id="rel-article-title">Relaterte ressurser</h2>
+        <ul class="links">
+          <li id="rel-1"><a href="#item-1">Teknisk SEO – sjekkliste</a></li>
+          <li id="rel-2"><a href="#item-2">Tittel og metabeskrivelse – maler</a></li>
+          <li id="rel-3"><a href="#item-3">Bilde-SEO – alt-tekst og format</a></li>
+          <li id="rel-4"><a href="#item-4">Internlenker – beste praksis</a></li>
+          <li id="rel-5"><a href="#item-5">Strukturert data – eksempler</a></li>
+        </ul>
+      </section>
+
+      <section id="google-btn" aria-labelledby="google-btn-title">
+        <h2 id="google-btn-title" class="sr-only">Ekstern lenke</h2>
+        <p><a class="btn" href="https://www.google.no" target="_blank" rel="noopener">Åpne Google</a></p>
+      </section>
+    </aside>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <p>Webutvikling 2024 – SEO-notater og eksempler</p>
+    </footer>
+  </div>
+
+  <!-- Minimal JS for meny og dropdown (kan flyttes til egen .js-fil) -->
+  <script>
+    // Mobilmeny
+    (function(){
+      const btn = document.querySelector('.js-menu-toggle');
+      const menu = document.getElementById('primary-menu');
+      if (!btn || !menu) return;
+
+      btn.addEventListener('click', () => {
+        const isHidden = menu.hasAttribute('hidden');
+        if (isHidden) menu.removeAttribute('hidden'); else menu.setAttribute('hidden', '');
+        btn.setAttribute('aria-expanded', String(isHidden));
+      });
+    })();
+
+    // Dropdown
+    (function(){
+      const toggle = document.querySelector('.dropdown__toggle');
+      const list = document.getElementById('dropdown-1');
+      if (!toggle || !list) return;
+
+      toggle.addEventListener('click', () => {
+        const isHidden = list.hasAttribute('hidden');
+        if (isHidden) list.removeAttribute('hidden'); else list.setAttribute('hidden', '');
+        toggle.setAttribute('aria-expanded', String(isHidden));
+      });
+
+      toggle.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !list.hasAttribute('hidden')) {
+          list.setAttribute('hidden', '');
+          toggle.setAttribute('aria-expanded', 'false');
+          toggle.focus();
+        }
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('.dropdown') && !list.hasAttribute('hidden')) {
+          list.setAttribute('hidden', '');
+          toggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+    })();
+  </script>
+</body>
 </html>
